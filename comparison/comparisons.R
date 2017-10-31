@@ -48,7 +48,11 @@ fchm <- function(base,all=sample_names(kpps)){
     svg(base)
     heatmap(mat,scale="none", main=paste("Fold-change compared to", base))
     dev.off()
-    file.rename(from=base, to=file.path(paste(base,"FASTQ",sep="_"),
+    if (file.exists(paste(base,"FASTQ",sep="_")))
+        file.rename(from=base, to=file.path(paste(base,"FASTQ",sep="_"),
+                                       "charts","fold-change.svg"))
+    else
+        file.rename(from=base, to=file.path(paste(base,"MERGED","FASTQ",sep="_"),
                                        "charts","fold-change.svg"))
     invisible(mat)
 }
