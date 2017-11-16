@@ -1,3 +1,3 @@
-sh installRDebian.sh
+sudo sh installRDebian.sh
 Rscript installCran.sh
 Rscript installBioc.sh
