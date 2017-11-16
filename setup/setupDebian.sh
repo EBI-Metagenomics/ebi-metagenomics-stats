@@ -1,3 +1,3 @@
 sudo sh installRDebian.sh
-Rscript installCran.sh
-Rscript installBioc.sh
+Rscript installCran.R
+Rscript installBioc.R
