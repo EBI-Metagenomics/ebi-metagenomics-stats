@@ -1,3 +1,3 @@
 sh installRFedora.sh
-sh installCran.sh
-sh installBioc.sh
+Rscript installCran.R
+Rscript installBioc.R

@@ -1,3 +1,3 @@
 sh installRDebian.sh
-sh installCran.sh
-sh installBioc.sh
+Rscript installCran.sh
+Rscript installBioc.sh
