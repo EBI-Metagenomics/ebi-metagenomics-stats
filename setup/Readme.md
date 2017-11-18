@@ -18,7 +18,7 @@ Running
 sh setupFedora.sh
 ```
 
-Should install R and all necessary R packages on a clean Fedora ? install.
+Should install R and all necessary R packages on a clean Fedora 27 install.
 
 ## RHEL 7
 
