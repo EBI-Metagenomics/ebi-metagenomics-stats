@@ -1,4 +1,7 @@
-# This script works on Fedora but probably needs editing for RHEL...
+# This script works for Fedora, but may need tweaking for RHEL
+# Really NEED R 3.4.x - the subsequent R package installations
+# won't work otherwise
 
-sudo yum update
-sudo yum install R
+sudo yum -y update
+sudo yum -y install R libxml2-devel libcurl-devel
+
