@@ -1,5 +1,15 @@
 # R Installation and setup scripts
 
+## Ubuntu 17.10 (artful)
+
+Running
+
+```bash
+sh setupUbuntu.sh
+```
+
+Should install R and all necessary R packages on a clean Ubuntu 17.10 (artful) install.
+
 ## Debian 9 (stretch)
 
 Running
