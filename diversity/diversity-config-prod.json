@@ -1,0 +1,6 @@
+{
+    "Rscript" : # path to statistic R package,
+    "diversityR" : # path tp the diversity R script ,
+    "os_envi" : #path to the R environment and libraries,
+    "res_dir" : path to root directory (used when providing relative path
+}
