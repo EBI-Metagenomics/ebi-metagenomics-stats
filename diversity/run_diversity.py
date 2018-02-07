@@ -9,12 +9,6 @@ import sys
 import argparse
 import json
 
-#Rscript = '/homes/scp/R/bin/Rscript'
-#diversity = '/hps/nobackup/production/metagenomics/production-scripts/diversity.R' 
-#os.environ['R_LIBS_USER'] = '/homes/scp/projects/emg/R'
-#res_dir = '/nfs/production/interpro/metagenomics/results'
-
-
 def parameters_according_to_version(pv):
     '''
     function to set parameters according to the pipeline version
