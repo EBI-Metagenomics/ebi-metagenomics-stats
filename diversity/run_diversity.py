@@ -11,7 +11,7 @@ import json
 
 #Rscript = '/homes/scp/R/bin/Rscript'
 #diversity = '/hps/nobackup/production/metagenomics/production-scripts/diversity.R' 
-os.environ['R_LIBS_USER'] = '/homes/scp/projects/emg/R'
+#os.environ['R_LIBS_USER'] = '/homes/scp/projects/emg/R'
 #res_dir = '/nfs/production/interpro/metagenomics/results'
 
 
@@ -166,7 +166,7 @@ parser.add_argument("-c", "--config",
 args = vars(parser.parse_args())
 config_file_path = args['config']
 configSettings = json.load(config_file_path)
-
+os.environ['R_LIBS_USER'] = configSettings["os_envi"]
 #check that the path is correctly formatted
 res_dir = configSettings["res_dir"]
 if args["directory"].startswith("/nfs"):
