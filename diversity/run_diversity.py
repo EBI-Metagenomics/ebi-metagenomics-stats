@@ -9,6 +9,9 @@ import sys
 import argparse
 import json
 
+__author__ = 'hudenise, scp 2018'
+
+
 def parameters_according_to_version(pv):
     '''
     function to set parameters according to the pipeline version
