@@ -182,7 +182,7 @@ def run_diversity(otu_files, runs, outdirs, path, dest, version, dir_type, file_
 acceptedPV = ['3.0','4.0','4.1']
 parser = argparse.ArgumentParser(
             description="run_diversity.py is a wrapper to gather the files of interest and call the diversity.R script.\n"
-                        "Command: run_diversity.py -s <path to project directory> -p <pipeline version> (optiona: -d <destination directory> -c <config file>.\n")
+                        "Command: run_diversity.py -s <path to project directory> -p <pipeline version> (options: -d <destination directory> -c <config file>.\n")
 parser.add_argument("-s", "--source directory", help="path to project directory", required=True)
 parser.add_argument("-pv", "--pipeline version", help="pipeline version in an accepted format ("+", ".join(acceptedPV)+")",
                         required=True)
@@ -205,10 +205,10 @@ if args["source directory"].startswith("/nfs"):
     res_dir = args["source directory"]
 else:
     res_dir = os.path.join(res_dir, args["source directory"])
+if res_dir.endswith("/") : res_dir = res_dir[:-1]
 if args["destination directory"] and  args["destination directory"].startswith("/"):
     dest_dir =  args["destination directory"]
 else: dest_dir = res_dir
-
 #check the pipeline version
 if str(float(args["pipeline version"])) in acceptedPV:
     pv = str(float(args["pipeline version"]))
