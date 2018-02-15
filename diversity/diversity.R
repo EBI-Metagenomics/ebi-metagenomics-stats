@@ -48,7 +48,7 @@ for (dir in dirlist) {
         file.rename(from=paste(run,"svg",sep="."),
                     to=file.path(dirname,"charts",paste(out_file_tag,"tad-plots.svg",sep="")))
        cat("Processed ",run,"\n",sep="")
-    }, error = function(cond) {if (file.exists(paste(run,"svg",sep="."))) file.remove(paste(run,"svg",sep=".")); cat("Failed on run ",run,": ",cond,"\n",sep="")})
+    }, error = function(cond) {if (file.exists(paste(run,"svg",sep="."))) file.remove(paste(run,"svg",sep=".")); cat(paste("Failed on run ",run,": ",cond,"\n",sep=""))})
 }
 #added the suffix ("SSU"/"LSU") to the diversity files
 df=data.frame("Run"=rownames(tab),tab)
