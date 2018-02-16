@@ -6,7 +6,6 @@ version = commandArgs(TRUE)[1] #pipeline version in an accepted version "3.0", "
 dir_name = commandArgs(TRUE)[2] #directory to use "cr_otus" for v3, 'taxonomy-summary for v4
 file_ext = commandArgs(TRUE)[3] #extension for files to be considered "_otu_table.txt" for v3, "fasta.mseq.tsv" for v4
 file_tag = commandArgs(TRUE)[4] #prefix for files: "" for v3, "SSU"/"LSU" for v4
-
 # Simple check that we are in a project directory
 currentdir = tail(strsplit(getwd(),'/')[[1]],n=1)
 if ((nchar(currentdir) != 9) | (substr(currentdir,3,3) != "P"))
@@ -18,7 +17,7 @@ library(ebimetagenomics)
 
 ## Run on a project
 ## Assuming current directory contains run folders...
-dirlist = grep("??R??????_FASTQ",list.dirs(recursive=FALSE),value=TRUE)
+dirlist = grep("?R?{7,}_FAST?",list.dirs(recursive=FALSE),value=TRUE)
 tab = NULL
 #added to create a tag for file ("SSU"/"LSU" for v4)
 if (nchar(file_tag) > 2)
