@@ -174,10 +174,12 @@ def run_diversity(otu_files, runs, outdirs, path, dest, version, dir_type, file_
         if not os.path.exists(os.path.join(dest, file)):
             file_dir = file.split("/")[2]
             new_Dest = create_new_path (file_dir, Dest)
-            if file_dir != 'project-summary':
-                 file_sub_dir = file.split("/")[3]
-                 create_new_path (file_sub_dir, new_Dest)
-            shutil.copyfile(os.path.join(tmpdir, projectname, file), os.path.join(study_Dest, file))
+            #this line is to avoid the issue when the diversity does not complete properly and an './version_xx/SRR3405424.svg' file is generated 
+            if file_dir[-3:] != 'svg':
+                 if file_dir != 'project-summary':
+                      file_sub_dir = file.split("/")[3]
+                      create_new_path (file_sub_dir, new_Dest)
+                 shutil.copyfile(os.path.join(tmpdir, projectname, file), os.path.join(study_Dest, file))
     shutil.rmtree(tmpdir)
 
 acceptedPV = ['3.0','4.0','4.1']
