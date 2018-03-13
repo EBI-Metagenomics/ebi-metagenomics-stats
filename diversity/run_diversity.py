@@ -8,7 +8,7 @@ import os
 import sys
 import argparse
 import json
-
+import glob
 __author__ = 'hudenise, scp 2018'
 
 
@@ -71,8 +71,9 @@ def run_ids_from_paths(path, pv):
     return run_id
     '''
     pr = re.compile('.*version_'+pv + '/(.*?)/')
-    m = pr.match(path)
-    return m.group(1)
+    if pr.match(path):
+         m = pr.match(path)
+         return m.group(1)
 
 def get_files (path, dest, pv):
     '''
@@ -135,8 +136,8 @@ def run_diversity(otu_files, runs, outdirs, path, dest, version, dir_type, file_
         if not os.path.isdir(od):
             os.makedirs(od)
     version="version_"+version
-    #rv = subprocess.call([Rscript, diversity, version, dir_type, file_name, nametag])
     rv = subprocess.call([configSettings["Rscript"],configSettings["diversityR"], version, dir_type, file_name, nametag])
+    
     outfiles = []
     project_tsv = False
 #   project_pca = False
